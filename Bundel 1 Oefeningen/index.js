@@ -76,10 +76,10 @@ console.log(som);
 
 // Oef 8
 let i = 1;
-let som = 0;
 
 for(i;i<=10;i++){
-
+    let somKwadraat = i ** 2;
+    console.log(somKwadraat);
 }
 
 
