@@ -108,20 +108,22 @@ console.log(inversieGetal);
 // --- Bundel Oefeningen, Geavanceerd ---
 
 /* Oef 1
-let nummer = 0;
-let i;
-let j;
+let count = 0;
+let i = 2;
+let j = 1;
 
-for (i=2;i<=100;i++) {
-    for (j = 1; j <= i; j++) {
+for (i;i<=100;i++) {
+    j = 1;
+    count = 0;
+    for (j;j<=i;j++) {
         if (i % j == 0) {
-            nummer++;
-            if (nummer == 3) {
-                j = -1;
-                nummer === 0;
-            }else {
-                console.log(i);
-            }
+            count++;
+        }
+        if (j == i && count == 2) {
+            console.log(i);
+        }
+        if (count > 2) {
+            break;
         }
     }
 }
@@ -186,20 +188,77 @@ for (i;i < invoerGetal;i++){
 console.log(`De grootste deler van het getal ${invoerGetal} is ${i/2}, afgezien van het getal zelf.`);
 */
 
-// Oef 7
+/* Oef 7
 let count = 0;
 let a = 0;
-let b = 0;
+let b = 1;
 let som = 0;
+let output = "";
 
 for (count;count<10;count++){
     som = a + b;
-    console.log(som);
-    a = b;
-    b = som;
-    if (count == 0){
-        som = 0;
-        b = b+1;
+    if (count >= 1) {
+        a = b;
+        b = som;
+    }
+    if (count < 9) {
+        output = output + `${som}, `;
+    }else{
+        output = output + `${som}`;
     }
 }
+console.log(output);
+*/
 
+/* Oef 8
+let fibo = parseInt(prompt("Voer hier het aantal getallen in voor de Fibonacci Reeks:"));
+let count = 0;
+let a = 0;
+let b = 1;
+let c = 0;
+let output = "";
+let som = 0;
+
+for (count;count<fibo;count++){
+    c = a + b;
+    if (count >= 1) {
+        a = b;
+        b = c;
+    }
+    if (count < (fibo - 1)) {
+        output = output + `${c}, `;
+    }else{
+        output = output + `${c}`;
+    }
+    som = som + c;
+}
+console.log(output);
+console.log(`De totale som van de eerste ${fibo} Fibonacci getallen is ${som}.`);
+*/
+
+// Oef 9
+let invoerGetal = parseInt(prompt("Voer hier een getal in:"));
+let count = 0;
+let i = 2;
+let j = 1;
+let result = "";
+
+for (i;i<=invoerGetal;i++) {
+    j = 1;
+    count = 0;
+    for (j;j<=i;j++) {
+        if (i % j == 0) {
+            count++;
+        }
+        if (j == i && count == 2) {
+            result = result + `${i}, `;
+        }
+        if (count > 2) {
+            break;
+        }
+    }
+}
+console.log(result);
+if (i == invoerGetal && count == 2) {
+    console.log(`Het getal ${invoerGetal} is een priemgetal.`);
+}
