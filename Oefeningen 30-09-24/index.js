@@ -64,11 +64,67 @@ while (i < aantalPogingen){
 }
 */
 
+/*
 let invoerGetal = parseInt(prompt("Voer hier een getal in:"));
-let i = 4;
+let i = 1;
 
-console.log(1);
 while (i <= invoerGetal) {
     console.log(i);
-    i = i*i;
+    if (i == 1) {
+        i = i * 4;
+    }
+    else {
+        i = i ** 2;
+    }
 }
+*/
+
+/* Extra Oefening 1
+let getal1 = parseInt(prompt(`Voer hier getal 1 in:`));
+let getal2 = parseInt(prompt(`Voer hier getal 2 in:`));
+let getal3 = parseInt(prompt("Voer hier getal 3 in:"));
+let resultaat = "";
+
+if (getal1 < getal2 && getal2 < getal3 && getal1 < getal3){
+    resultaat = `${getal1}, ${getal2}, ${getal3}.`;
+}
+else if (getal2 < getal1 && getal1 < getal3 && getal2 < getal3){
+    resultaat = `${getal2}, ${getal1}, ${getal3}.`;
+}
+else if (getal1 < getal3 && getal3 < getal2 && getal1 < getal3) {
+    resultaat = `${getal1}, ${getal3}, ${getal2}.`;
+}
+else if (getal2 < getal3 && getal3 < getal1 && getal2 < getal1) {
+    resultaat = `${getal2}, ${getal3}, ${getal1}.`;
+}
+else if (getal3 < getal2 && getal2 < getal1 && getal3 < getal1) {
+    resultaat = `${getal3}, ${getal2}, ${getal1}.`;
+}
+else if (getal3 < getal1 && getal1 < getal2 && getal3 < getal2) {
+    resultaat = `${getal3}, ${getal1}, ${getal2}.`;
+}
+console.log(`De getallen in volgorde van klein naar groot zijn: ${resultaat}`);
+*/
+
+// Extra Oefening 2
+let somOneven = 0;
+let somEven = 0;
+let countOneven = 0;
+let countEven = 0;
+
+for (;;){
+    let invoerGetal = parseInt(prompt("Voer hier getallen in, met 0 als beeindiging van de reeks:"));
+    if (invoerGetal%2 > 0) {
+        somOneven = somOneven + invoerGetal;
+        countOneven++;
+    }
+    if (invoerGetal%2 == 0 && invoerGetal !== 0) {
+        somEven = somEven + invoerGetal;
+        countEven++;
+    }
+    if (invoerGetal == 0) {
+        break;
+    }
+}
+console.log(`Aantal oneven getallen: ${countOneven}, som oneven getallen: ${somOneven}.`)
+console.log(`Aantal even getallen: ${countEven}, som even getallen: ${somEven}.`)

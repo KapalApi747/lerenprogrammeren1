@@ -236,7 +236,7 @@ console.log(output);
 console.log(`De totale som van de eerste ${fibo} Fibonacci getallen is ${som}.`);
 */
 
-// Oef 9
+/* Oef 9
 let invoerGetal = parseInt(prompt("Voer hier een getal in:"));
 let count = 0;
 let i = 2;
@@ -244,6 +244,10 @@ let j = 1;
 let result = "";
 
 for (i;i<=invoerGetal;i++) {
+    console.log(`C-${i}`);
+    if (i == invoerGetal && count <= 2) {
+        console.log(`Het getal ${invoerGetal} is een priemgetal.`);
+    }
     j = 1;
     count = 0;
     for (j;j<=i;j++) {
@@ -259,6 +263,4 @@ for (i;i<=invoerGetal;i++) {
     }
 }
 console.log(result);
-if (i == invoerGetal && count == 2) {
-    console.log(`Het getal ${invoerGetal} is een priemgetal.`);
-}
+*/
